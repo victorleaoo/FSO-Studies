@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <signal.h>
+#include <stdlib.h>
 
 // Ver se a senha for recebida
 int senha = 0;
@@ -33,5 +34,4 @@ int main(void){
     while (1){
         pause();
     }
-    
 }
