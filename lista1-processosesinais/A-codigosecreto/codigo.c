@@ -11,10 +11,10 @@ void sinalrecebido(int s){
     if(s == SIGINT){
         senha = 1;
     } else if(senha == 1 && s == SIGUSR2){
-        senha = 2;
+        senha++;
     } else if(senha == 2 && s == SIGTERM){
         printf("Senha acionada\n");
-        senha = 3;
+        senha++;
     } else if(senha == 3 && s == SIGUSR1){
         printf("Tchau\n");
         exit(0);
@@ -24,7 +24,6 @@ void sinalrecebido(int s){
 }
 
 int main(void){
-    int sinal;
     signal(SIGINT, sinalrecebido);
     signal(SIGUSR1, sinalrecebido);
     signal(SIGUSR2, sinalrecebido);
