@@ -2,7 +2,7 @@
 #include <signal.h>
 #include <stdlib.h>
 
-// Ver se a senha for recebida
+// Variável Ver se a senha for recebida
 int senha = 0;
 
 void sinalrecebido(int s){
@@ -27,9 +27,9 @@ int main(void){
     signal(SIGINT, sinalrecebido);
     signal(SIGUSR1, sinalrecebido);
     signal(SIGUSR2, sinalrecebido);
-    signal(SIGINT, sinalrecebido);
+    signal(SIGTERM, sinalrecebido);
 
-    // Tem que rodar para sempre
+    // Tem que rodar para sempre (até exit)
     while (1){
         pause();
     }
